@@ -49,7 +49,7 @@
 			</tbody>
 		</table>
 	</div>
-<div class="container mt-4">
+<div class="container mt-5">
 	<a href="/catalogo/nuevo" class="btn btn-success">Agregar Nuevo</a>
 		<table class="table">
 			<thead>
@@ -75,5 +75,6 @@
 			</tbody>
 		</table>
 	</div>
+
 </body>
 </html>
