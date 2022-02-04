@@ -13,9 +13,22 @@
 	crossorigin="anonymous">
 </head>
 <body>
-	<div class="container mt-4">
-	<a href="/libro/nuevo" class="btn btn-success">Agregar Nuevo</a>
-		<table class="table">
+<div class="container">
+<div class="row">
+<nav class="navbar navbar-expand-sm bg-dark">
+  <div class="container-fluid">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <span class="text-white">LIBRERIA</span>
+      </li>
+    </ul>
+  </div>
+</nav>
+</div>
+<div class="row">
+
+	<div class="container-fluid mt-4 col-10">
+		<table class="table table-dark table-striped">
 			<thead>
 				<tr>
 					<th>ID</th>
@@ -48,33 +61,29 @@
 
 			</tbody>
 		</table>
+			<a href="/libro/nuevo" class="btn btn-success">Agregar Nuevo</a>
 	</div>
-<div class="container mt-5">
-	<a href="/catalogo/nuevo" class="btn btn-success">Agregar Nuevo</a>
-		<table class="table">
+	<div class="container-fluid mt-4 col-2">
+		<table class="table table-dark table-striped">
 			<thead>
 				<tr>
-					<th>ID</th>
 					<th>TITULO</th>
-
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="catalogo" items="${catalogos}">
+				<c:forEach var="libro" items="${libros}">
+				<c:if test="${libro.catalogo==true}">
 					<tr>
-						<td>${catalogo.id}</td>
-						<td>${catalogo.titulo}</td>
-
-						<td>
-						<a href="/catalogo/editar/${catalogo.id}" class="btn btn-warning">Editar</a> 
-						<a href="/catalogo/eliminar/${catalogo.id}" class="btn btn-danger">Eliminar</a>
-						</td>
+						<td>${libro.titulo}</td>
 					</tr>
+					</c:if>
 				</c:forEach>
 
 			</tbody>
 		</table>
 	</div>
 
+</div>
+</div>
 </body>
 </html>

@@ -26,32 +26,45 @@
 				</div>
 				<div class="from-group">
 					<label>TITULO</label> <input type="text" name="titulo"
-						class="form-control" value="${libro.titulo}">
+						class="form-control" value="${libro.titulo}" required>
 				</div>
 				<div class="from-group">
 					<label>EDITORIAL</label> <input type="text" name="editorial"
-						class="form-control" value="${libro.editorial}">
+						class="form-control" value="${libro.editorial}" required>
 				</div>
 				<div class="from-group">
 					<label>AUTOR</label> <input type="text" name="autor"
-						class="form-control" value="${libro.autor}">
+						class="form-control" value="${libro.autor}" required>
 				</div>
 				<div class="from-group">
 					<label>GENERO</label> <input type="text" name="genero"
-						class="form-control" value="${libro.genero}">
+						class="form-control" value="${libro.genero}" required>
 				</div>
 				<div class="from-group">
 					<label>EDICION</label> <input type="text" name="edicion"
-						class="form-control" value="${libro.edicion}">
+						class="form-control" value="${libro.edicion}" required>
 				</div>
 				<div class="from-group">
 					<label>IDIOMA</label> <input type="text" name="idioma"
-						class="form-control" value="${libro.idioma}">
+						class="form-control" value="${libro.idioma}" required>
 				</div>
 				<div class="from-group">
 					<label>ISBN</label> <input type="text" name="isbn"
-						class="form-control" value="${libro.isbn}">
+						class="form-control" value="${libro.isbn}" required>
 				</div>
+					<div class="from-group">
+						<label>CATALOGO</label>
+						<div class="form-check">
+							<input type="radio" class="form-check-input" id="radio1"
+								name="catalogo" value="true" <c:if test="${libro.catalogo==true}"> checked </c:if>>SI <label
+								class="form-check-label" for="radio1"></label>
+						</div>
+						<div class="form-check">
+							<input type="radio" class="form-check-input" id="radio2"
+								name="catalogo" value="false"  <c:if test="${libro.catalogo==false}"> checked </c:if>>NO <label
+								class="form-check-label" for="radio2"></label>
+						</div>
+					</div>
 			</div>
 			<div class="card-footer">
 				<input type="submit" value="Actualizar" class="btn btn-secondary">

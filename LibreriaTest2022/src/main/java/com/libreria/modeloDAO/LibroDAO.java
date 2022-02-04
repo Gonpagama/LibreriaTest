@@ -7,7 +7,6 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.libreria.modelo.Catalogo;
 import com.libreria.modelo.Libro;
 
 @Repository
@@ -33,15 +32,15 @@ public class LibroDAO implements ILibro{
 
 	@Override
 	public int agregar(Libro l) {
-		String sql = "insert into libro(titulo,editorial,autor,genero,edicion,idioma,isbn)values(?,?,?,?,?,?,?)";
-		int lib = template.update(sql, l.getTitulo(), l.getEditorial(), l.getAutor(), l.getGenero(), l.getEdicion(), l.getIdioma(), l.getIsbn());
+		String sql = "insert into libro(titulo,editorial,autor,genero,edicion,idioma,isbn,catalogo)values(?,?,?,?,?,?,?,?)";
+		int lib = template.update(sql, l.getTitulo(), l.getEditorial(), l.getAutor(), l.getGenero(), l.getEdicion(), l.getIdioma(), l.getIsbn(), l.isCatalogo());
 		return lib;
 	}
 
 	@Override
 	public int editar(Libro l) {
-		String sql="update libro set titulo=?,editorial=?,autor=?,genero=?,edicion=?,idioma=?,isbn=? where id=?";
-		int lib=template.update(sql,l.getTitulo(), l.getEditorial(), l.getAutor(), l.getGenero(), l.getEdicion(), l.getIdioma(), l.getIsbn(),l.getId());
+		String sql="update libro set titulo=?,editorial=?,autor=?,genero=?,edicion=?,idioma=?,isbn=?,catalogo=? where id=?";
+		int lib=template.update(sql,l.getTitulo(), l.getEditorial(), l.getAutor(), l.getGenero(), l.getEdicion(), l.getIdioma(), l.getIsbn(), l.isCatalogo(),l.getId());
 		return lib;
 	}
 

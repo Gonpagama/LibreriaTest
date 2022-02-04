@@ -9,9 +9,18 @@ public class Libro {
 	private  String edicion;
 	private  String idioma;
 	private  String isbn;
+	private  boolean catalogo;
 	
 	public Libro() {
 		
+	}
+
+	public boolean isCatalogo() {
+		return catalogo;
+	}
+
+	public void setCatalogo(boolean catalogo) {
+		this.catalogo = catalogo;
 	}
 
 	public int getId() {
@@ -79,7 +88,7 @@ public class Libro {
 	}
 
 	public Libro(int id, String titulo, String editorial, String autor, String genero, String edicion, String idioma,
-			String isbn) {
+			String isbn, boolean catalogo) {
 		super();
 		this.id = id;
 		this.titulo = titulo;
@@ -89,6 +98,7 @@ public class Libro {
 		this.edicion = edicion;
 		this.idioma = idioma;
 		this.isbn = isbn;
+		this.catalogo = catalogo;
 	}
 	
 }

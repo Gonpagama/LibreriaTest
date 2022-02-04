@@ -18,11 +18,8 @@ public class LibreriaTest2022Application implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		template.execute("DROP TABLE CATALOGO IF EXISTS");
-		template.execute("CREATE TABLE CATALOGO(id INTEGER(11) PRIMARY KEY auto_increment,titulo VARCHAR(255))");
 		template.execute("DROP TABLE LIBRO IF EXISTS");
-		template.execute("CREATE TABLE LIBRO(id INTEGER(11) PRIMARY KEY auto_increment,titulo VARCHAR(255),editorial VARCHAR(255),autor VARCHAR(255),genero VARCHAR(255),edicion VARCHAR(255),idioma VARCHAR(255),isbn VARCHAR(255))");
-		template.execute("DROP TABLE LIBROXCATALOGO IF EXISTS");
-		template.execute("CREATE TABLE LIBROXCATALOGO(id INTEGER(11) PRIMARY KEY auto_increment, idcatalgo INTEGER(11) ,idlibro INTEGER(11) )");
+		template.execute("CREATE TABLE LIBRO(id INTEGER(11) PRIMARY KEY auto_increment,titulo VARCHAR(255),editorial VARCHAR(255),autor VARCHAR(255),genero VARCHAR(255),edicion VARCHAR(255),idioma VARCHAR(255),isbn VARCHAR(255),catalogo BOOLEAN)");
+
 	}
 }
